@@ -1,0 +1,141 @@
+.segment_container{
+    padding: 20px;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+.side-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1100;
+}
+
+.side-modal.slide-in {
+    transform: translateX(0);
+}
+
+.side-modal.slide-out {
+    transform: translateX(100%);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.open-modal-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.app-container {
+    padding: 20px;
+}
+
+.traks_cont {
+    display: flex;
+    justify-content: right;
+    padding-right: 30px;
+    gap: 25px;
+}
+
+.tracker_group {
+    display: flex;
+    align-items: center;
+}
+
+.green_circle {
+    margin-top: 8px;
+    margin-left: 20px;
+    margin-right: 2px;
+    color: #5DDB78;
+}
+
+.transparent_circle {
+    margin-top: 8px;
+    margin-left: 20px;
+    margin-right: 2px;
+    color: #b2b7b3;
+}
+
+.pink_circle {
+    margin-top: 8px;
+    margin-left: 20px;
+    margin-right: 2px;
+    color: #D24572;
+}
+
+
+.select_group {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.minimus_cont {
+    width: 20px;
+    height: 20px;
+    background-color: #F2FBF9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.minimus_icon {
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.addSchema {
+    cursor: pointer;
+    margin-left: 8%;
+    color: #41d1ad;
+    font-weight: 700;
+    font-size: small;
+}
+
+.addLink {
+    border-bottom: 2px solid #41d1ad;
+}
+
+.footer {
+    background-color: #F6F6F6;
+    width: 100%;
+    height: 8vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 20px;
+}

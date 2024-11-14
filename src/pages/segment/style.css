@@ -1,0 +1,27 @@
+.header_div {
+    height: 15vh;
+    background-color: #226870;
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    margin: 0;
+    margin-left: 2%;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.back_icon {
+    margin-top: 8px;
+    margin-left: 20px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.segment_button_con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+}

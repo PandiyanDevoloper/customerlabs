@@ -1,0 +1,24 @@
+.transparent {
+    background-color: white;
+    border: 2px solid #999999;
+    color: #999999;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: #41B494;
+    color: #FFFFFF;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+
+}
+
+.cancel {
+    background-color: #FFFFFF;
+    color: #E081A0;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+}
