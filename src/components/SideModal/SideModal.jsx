@@ -6,9 +6,11 @@ import Input from "../Input/Input";
 import SelectComponent from "../Select/Select";
 import { FaWindowMinimize } from "react-icons/fa";
 import Button from "../Button/Button";
+import axios from "axios";
 
 const SideModal = ({ isOpen, onClose, setaSchemas }) => {
   const [oSegmentDetails, setOSegmentDetails] = useState({
+    segment_name: "",
     schema: [{}],
   });
 
@@ -35,16 +37,25 @@ const SideModal = ({ isOpen, onClose, setaSchemas }) => {
     setOSegmentDetails(oSegment);
   };
 
-  const saveSegment = () => {
+  const saveSegment = async () => {
     const oSegment = JSON.parse(JSON.stringify(oSegmentDetails));
     const oPayloadObj = {
-      segment_name: oSegment?.oSegment,
+      segment_name: oSegment?.segment_name,
     };
     oPayloadObj.schema = oSegment?.schema?.map((schema) => {
       return { [schema?.value]: schema?.label };
     });
     setaSchemas(oPayloadObj);
     console.log("Payload", oPayloadObj);
+    try {
+      const response = await axios.post(
+        "https://webhook.site/4b9c5760-c3ca-43e1-9b11-c3a39469697a",
+        oPayloadObj
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const constructOpt = () => {
@@ -69,6 +80,11 @@ const SideModal = ({ isOpen, onClose, setaSchemas }) => {
               name="segment_name"
               value={oSegmentDetails?.segment_name}
               label="Enter the Name of the Segment"
+              onChange={(e) => {
+                const data = JSON.parse(JSON.stringify(oSegmentDetails));
+                data.segment_name = e.target.value;
+                setOSegmentDetails(data);
+              }}
             />
           </div>
           <p>

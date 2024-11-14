@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const Input = ({ label, value, name }) => {
+const Input = ({ label, value, onChange, name }) => {
   return (
     <div className="input_group">
       <div>
@@ -13,6 +13,7 @@ const Input = ({ label, value, name }) => {
           id={name}
           name={name}
           value={value}
+          onChange={(e) => onChange(e)}
         ></input>
       </div>
     </div>
